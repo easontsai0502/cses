@@ -1,5 +1,6 @@
 /*
 [Q]https://cses.fi/problemset/task/1084
+[AC]
 */
 #include<iostream>
 #include<vector>
@@ -8,13 +9,13 @@
 using namespace std;
 #define ulli unsigned long long int
 #define lli long long int
-	vector<int> friendlist[100];
-	int team[200];
-bool solve(int x,int c){
+	vector<ulli> friendlist[100000];
+	ulli team[200000];
+bool solve(ulli x,ulli c){
 //*debug*/cout<<x<<' '<<c<<"\n";
 	team[x]=c;
 	bool re=true;
-	for(int i:friendlist[x]){
+	for(ulli i:friendlist[x]){
 
 		if(re){
 		    
@@ -40,7 +41,7 @@ bool solve(int x,int c){
 int main(){
 	ulli n,m;
 	cin>>n>>m;
-	for(int i=0;i<n;i++){
+	for(ulli i=0;i<n;i++){
 		team[n]=0;
 	}
 	while(m--){
@@ -51,10 +52,10 @@ int main(){
 		friendlist[a].push_back(b);
 		friendlist[b].push_back(a);
 	}
-	cout<<"===================================";
+	//cout<<"===================================";
 	bool cansolve=true;
 	/*for迴圈的用意：確保大家都有組別*/
-	for(int i=0;i<n && cansolve;i++){
+	for(ulli i=0;i<n && cansolve;i++){
 	    
 		if(team[i]){continue;}
 		else{
@@ -62,7 +63,7 @@ int main(){
 		}
 	}
 	if(cansolve){
-		for(int i=0;i<n;i++){
+		for(ulli i=0;i<n;i++){
 			cout<<team[i]<<' ';
 		}
 	}else{
