@@ -8,11 +8,24 @@
 using namespace std;
 #define ulli unsigned long long int
 #define lli long long int
+	vector<int> friendlist[100000];
+	int team[200000];
+void solve(int x,c){
+	team[x]=c;
+	for(int i:friendlist[x]){
+		/*確認這一組裡面有沒有friend*/
+		if(team[i]==team[x]){
+			return false;
+		}
+		/*若有朋友沒有分到組*/
+		if(team[i]==0){
+
+		}
+	}
+}
 int main(){
 	ulli n,m;
 	cin>>n>>m;
-	vector<int> friendlist[n];
-	int team[n];
 	for(int i=0;i<n;i++){
 		team[n]=0;
 	}
@@ -22,11 +35,19 @@ int main(){
 		friendlist[a].push_back(b);
 		friendlist[b].push_back(a);
 	}
-	for(int i=0;i<n;i++){
+	void cansolve=true;
+	for(int i=0;i<n && cansolve;i++){
 		if(team[n]){continue;}
 		else{
-			
+			cansolve=solve(i,1);
 		}
+	}
+	if(cansolve){
+		for(int i=0;i<n;i++){
+			cout<<team[i]<<' ';
+		}
+	}else{
+		cout<<"IMPOSSIBLE";
 	}
 	return 0;
 }
