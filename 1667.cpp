@@ -44,9 +44,18 @@ int main(){
 		checkque.pop_front();
 	}
 	if(isconnect[n-1]){
-		cout<<from[n-1].size<<"\n";
-		for(ulli i:from[n-1]){
-			cout<<i<<" ";
+		ulli ans=0;
+		deque<ulli> conline;
+		int i=n-1;
+		while(i){
+			conline.push_front(i);
+			ans++;
+			i=from[i];
+		}
+		cout<<ans<<"\n";
+		while(ans--){
+			cout<<conline.front()+1;
+			conline.pop_front();
 		}
 	}else{
 		cout<<"IMPOSSIBLE"
