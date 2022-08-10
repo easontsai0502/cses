@@ -11,36 +11,46 @@
 using namespace std;
 #define ulli unsigned long long int
 #define lli long long int
-ulli solve(ulli x,ulli c){
-	return re;
-}
 int main(){
 	ulli n,m;
-	cin<<n<<m;
+	cin>>n>>m;
 	vector<ulli> con[n];
-	vector<ulli> howto[n];
+	ulli from[n];
 	bool isconnect[n];
 	while(m--){
 		ulli a,b;
 		cin>>a>>b;
-		a--;b--
+		a--;b--;
 		con[a].push_back(b);
 		con[b].push_back(a);
 	}
 	for(int i=0;i<n;i++){
-		isconnect[n]=false;
+		isconnect[i]=false;
 	}
 	isconnect[0]=true;
 	deque<ulli> checkque;
 	checkque.push_back(0);
 	while(checkque.size()){
-		
-		if(isconnect[n]){
+		ulli i=checkque.front();
+		for(ulli j:con[i]){
+			if(isconnect[j]){continue;}
+			from[j]=i;
+			deque.push_back(j);
+			isconnect[j]=true;
+		}
+		if(isconnect[n-1]){
 			break;
 		}
+		checkque.pop_front();
 	}
-	ulli ans=0;
-
+	if(isconnect[n-1]){
+		cout<<from[n-1].size<<"\n";
+		for(ulli i:from[n-1]){
+			cout<<i<<" ";
+		}
+	}else{
+		cout<<"IMPOSSIBLE"
+	}
 	return 0;
 }
 
