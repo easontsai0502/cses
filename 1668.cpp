@@ -8,19 +8,21 @@
 using namespace std;
 #define ulli unsigned long long int
 #define lli long long int
-	vector<int> friendlist[100000];
-	int team[200000];
+	vector<int> friendlist[100];
+	int team[200];
 bool solve(int x,int c){
-/*debug*/cout<<x<<' '<<c<<"\n";
+//*debug*/cout<<x<<' '<<c<<"\n";
 	team[x]=c;
 	bool re=true;
 	for(int i:friendlist[x]){
 
 		if(re){
+		    
 			/*確認這一組裡面有沒有friend*/
 			if(team[i]==team[x]){
 				return false;
 			}
+			
 			/*若有朋友沒有分到組，將朋友分到另一組(不然for迴圈只會把大家分到1裡面)(確保朋友在不同組)*/
 			if(team[i]==0){
 				if(team[x]==1){
@@ -53,7 +55,8 @@ int main(){
 	bool cansolve=true;
 	/*for迴圈的用意：確保大家都有組別*/
 	for(int i=0;i<n && cansolve;i++){
-		if(team[n]){continue;}
+	    
+		if(team[i]){continue;}
 		else{
 			cansolve=solve(i,1);
 		}
