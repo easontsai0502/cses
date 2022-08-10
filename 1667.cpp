@@ -1,6 +1,6 @@
 /*
 [Q]https://cses.fi/problemset/task/1667
-[]
+[AC]
 */
 #include<iostream>
 #include<vector>
