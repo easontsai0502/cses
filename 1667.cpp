@@ -27,6 +27,7 @@ int main(){
 	for(int i=0;i<n;i++){
 		isconnect[i]=false;
 	}
+	/*solve*/
 	isconnect[0]=true;
 	deque<ulli> checkque;
 	checkque.push_back(0);
@@ -35,7 +36,7 @@ int main(){
 		for(ulli j:con[i]){
 			if(isconnect[j]){continue;}
 			from[j]=i;
-			deque.push_back(j);
+			checkque.push_back(j);
 			isconnect[j]=true;
 		}
 		if(isconnect[n-1]){
@@ -43,6 +44,7 @@ int main(){
 		}
 		checkque.pop_front();
 	}
+	/*cout*/
 	if(isconnect[n-1]){
 		ulli ans=0;
 		deque<ulli> conline;
@@ -52,13 +54,13 @@ int main(){
 			ans++;
 			i=from[i];
 		}
-		cout<<ans<<"\n";
+		cout<<ans<<"\n1 ";
 		while(ans--){
-			cout<<conline.front()+1;
+			cout<<conline.front()+1<<" ";
 			conline.pop_front();
 		}
 	}else{
-		cout<<"IMPOSSIBLE"
+		cout<<"IMPOSSIBLE";
 	}
 	return 0;
 }
