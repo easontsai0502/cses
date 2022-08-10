@@ -10,10 +10,12 @@ using namespace std;
 #define lli long long int
 	vector<int> friendlist[100000];
 	int team[200000];
-void solve(int x,c){
+bool solve(int x,int c){
+/*debug*/cout<<x<<' '<<c<<"\n";
 	team[x]=c;
-	void re=true;
+	bool re=true;
 	for(int i:friendlist[x]){
+
 		if(re){
 			/*確認這一組裡面有沒有friend*/
 			if(team[i]==team[x]){
@@ -21,9 +23,9 @@ void solve(int x,c){
 			}
 			/*若有朋友沒有分到組，將朋友分到另一組(不然for迴圈只會把大家分到1裡面)(確保朋友在不同組)*/
 			if(team[i]==0){
-				if(c==1){
+				if(team[x]==1){
 					re=solve(i,2);
-				}else if(c==2){
+				}else if(team[x]==2){
 					re=solve(i,1);
 				}
 			}
@@ -47,7 +49,8 @@ int main(){
 		friendlist[a].push_back(b);
 		friendlist[b].push_back(a);
 	}
-	void cansolve=true;
+	cout<<"===================================";
+	bool cansolve=true;
 	/*for迴圈的用意：確保大家都有組別*/
 	for(int i=0;i<n && cansolve;i++){
 		if(team[n]){continue;}
@@ -66,4 +69,11 @@ int main(){
 }
 
 /*
+[I1]
+5 3
+1 2
+1 3
+4 5
+[O1]
+1 2 2 1 2
 */
