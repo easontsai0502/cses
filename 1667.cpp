@@ -15,18 +15,44 @@ ulli solve(ulli x,ulli c){
 	return re;
 }
 int main(){
-    int n,m;
-    cin<<n<<m;
-    
+	ulli n,m;
+	cin<<n<<m;
+	vector<ulli> con[n];
+	vector<ulli> howto[n];
+	bool isconnect[n];
+	while(m--){
+		ulli a,b;
+		cin>>a>>b;
+		a--;b--
+		con[a].push_back(b);
+		con[b].push_back(a);
+	}
+	for(int i=0;i<n;i++){
+		isconnect[n]=false;
+	}
+	isconnect[0]=true;
+	deque<ulli> checkque;
+	checkque.push_back(0);
+	while(checkque.size()){
+		
+		if(isconnect[n]){
+			break;
+		}
+	}
+	ulli ans=0;
+
 	return 0;
 }
 
 /*
 [I1]
-5 3
+5 5
 1 2
 1 3
-4 5
+1 4
+2 3
+5 4
 [O1]
-1 2 2 1 2
+3
+1 4 5
 */
