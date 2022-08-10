@@ -1,6 +1,6 @@
 /*
 [Q]https://cses.fi/problemset/task/1667
-[AC]
+[]
 */
 #include<iostream>
 #include<vector>
@@ -12,6 +12,9 @@ using namespace std;
 #define ulli unsigned long long int
 #define lli long long int
 int main(){
+    cin.tie(0);
+    cout.tie(0);
+    ios::sync_with_stdio(false);
 	ulli n,m;
 	cin>>n>>m;
 	vector<ulli> con[n];
@@ -54,7 +57,7 @@ int main(){
 			ans++;
 			i=from[i];
 		}
-		cout<<ans<<"\n1 ";
+		cout<<ans+1<<"\n1 ";
 		while(ans--){
 			cout<<conline.front()+1<<" ";
 			conline.pop_front();
