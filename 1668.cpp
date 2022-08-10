@@ -1,5 +1,5 @@
 /*
-[Q]https://cses.fi/problemset/task/1084
+[Q]https://cses.fi/problemset/task/1668
 [AC]
 */
 #include<iostream>
