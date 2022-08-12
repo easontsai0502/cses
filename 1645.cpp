@@ -9,6 +9,7 @@
 #include<string>
 #include<sstream>
 #include<stack>
+#include<deque>
 using namespace std;
 #define ulli unsigned long long int
 #define lli long long ulli
@@ -21,15 +22,16 @@ ulli main(){
         cin>>z;
 		x.push_back({z,i});
     }
-    stack< pair<ulli,ulli> > st;
+    deque< pair<ulli,ulli> > st;
     for(ulli i=0;i<n;i++){
 		if(i){
 			stack< pair<ulli,ulli> >::iterator stit=st.end();
 			stit--;
-			while((*stit).first<=)
+			while((*stit).first>=x[i].first)stit++;
+			st.push_back(x[i]);
 		}else{
 			cout<<"0 ";
-			st.push(x[i]);
+			st.push_back(x[i]);
 			continue;
 		}
 		while(st.front()>=x[i].first && (st.front()).secont!=x[i].second)st.pop();
