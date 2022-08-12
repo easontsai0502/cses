@@ -28,15 +28,14 @@ int main(){
 			deque< pair<ulli,ulli> >::iterator stit=st.end();
 			stit--;
 			ulli ans=0;
-            ans=(*stit).second;
+            ans=(*stit).second+1;
 			while((*stit).first>=x[i].first){
                 if(stit==st.begin()){
                     ans=0;
                     break;
                 }
                 stit--;
-                ans=(*stit).second;
-                cout<<"[38]ans="<<ans<<"\n";
+                ans=(*stit).second+1;
             }
 			cout<<ans<<" ";
 			st.push_back(x[i]);
