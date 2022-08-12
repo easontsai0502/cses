@@ -24,13 +24,15 @@ ulli main(){
     stack< pair<ulli,ulli> > st;
     for(ulli i=0;i<n;i++){
 		if(i){
-
+			stack< pair<ulli,ulli> >::iterator stit=st.end();
+			stit--;
+			while((*stit).first<=)
 		}else{
 			cout<<"0 ";
 			st.push(x[i]);
 			continue;
 		}
-		while(st.front()>=x[i].first)st.pop();
+		while(st.front()>=x[i].first && (st.front()).secont!=x[i].second)st.pop();
 		
     }
 	return 0;
