@@ -13,8 +13,24 @@ using namespace std;
 #define lli long long int
 int maplist[1001][1001];
 int n,m;
-void solver(int x,int y,int point=0){
-
+void solver(int x,int y){
+	maplist[x][y]=0;
+	/*UP*/
+	if(y){
+		if(maplist[x][y-1])solver(x,y-1);
+	}
+	/*DOWN*/
+	if(y-(m-1)){
+		if(maplist[x][y+1])solver(x,y+1);
+	}
+	/*LEFT*/
+	if(x){
+		if(maplist[x-1][y])solver(x-1,y);
+	}
+	/*RIGHT*/
+	if(x-(n-1)){
+		if(maplist[x+1][y])solver(x+1,y);
+	}
 }
 int main(){
 	cin>>n>>m;
@@ -29,6 +45,16 @@ int main(){
 			}
 		}
 	}
+	int ans=0;
+	for(int i=0;i<n;i++){
+		for(int j=0;j<m;j++){
+			if(maplist[i][j]){
+				solver(i,j);
+				ans++;
+			}
+		}
+	}
+	cout<<ans;
 	return 0;
 }
 /*
