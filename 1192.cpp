@@ -34,14 +34,14 @@ void solver(int x,int y){
 }
 int main(){
 	cin>>n>>m;
-	for(int i=0;i<m;i++){
+	for(int i=0;i<n;i++){
 		string str;
 		cin>>str;
-		for(int j=0;j<n;j++){
+		for(int j=0;j<m;j++){
 			if(str[j]=='#'){
-				maplist[m][n]=0;
+				maplist[i][j]=0;
 			}else{
-				maplist[m][n]=1;
+				maplist[i][j]=1;
 			}
 		}
 	}
@@ -57,6 +57,17 @@ int main(){
 	cout<<ans;
 	return 0;
 }
+/*
+[I1]
+5 8
+########
+#..#...#
+####.#.#
+#..#...#
+########
+[O1]
+3
+*/
 /*
 [THINK]
 ______>n
