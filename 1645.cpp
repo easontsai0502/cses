@@ -13,7 +13,7 @@
 using namespace std;
 #define ulli unsigned long long int
 #define lli long long ulli
-ulli main(){
+int main(){
     ulli n;
     cin>>n;
     vector< pair<ulli,ulli> >x;
@@ -25,17 +25,32 @@ ulli main(){
     deque< pair<ulli,ulli> > st;
     for(ulli i=0;i<n;i++){
 		if(i){
-			stack< pair<ulli,ulli> >::iterator stit=st.end();
+			deque< pair<ulli,ulli> >::iterator stit=st.end();
 			stit--;
-			while((*stit).first>=x[i].first)stit++;
+			ulli ans=0;
+            ans=(*stit).second;
+			while((*stit).first>=x[i].first){
+                if(stit==st.begin()){
+                    ans=0;
+                    break;
+                }
+                stit--;
+                ans=(*stit).second;
+                cout<<"[38]ans="<<ans<<"\n";
+            }
+			cout<<ans<<" ";
 			st.push_back(x[i]);
 		}else{
 			cout<<"0 ";
 			st.push_back(x[i]);
 			continue;
 		}
-		while(st.front()>=x[i].first && (st.front()).secont!=x[i].second)st.pop();
-		
+        deque< pair<ulli,ulli> >::iterator stit=st.begin();
+		while((*stit).first>=(x[i]).first && (*stit).second!=x[i].second){
+            stit++;
+            st.pop_front();
+        }
+
     }
 	return 0;
 }
