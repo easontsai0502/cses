@@ -52,7 +52,8 @@
 					"by":{"name":"ET01","mail":"kagariet01@outlook.com"},
 					"do":"files edit",
 					"add":[
-						"./1192.cpp"
+						"./1192.cpp",
+						"./1645.cpp"
 					],
 					"remove":[],
 					"edit":[],
