@@ -15,12 +15,22 @@ using namespace std;
 ulli main(){
     ulli n;
     cin>>n;
-    ulli x[n];
+    vector< pair<ulli,ulli> >x;
     for(ulli i=0;i<n;i++){
-        cin>>x[i];
+		int z;
+        cin>>z;
+		x.push_back({z,i});
     }
-    stack<ulli> st;
+    stack< pair<ulli,ulli> > st;
     for(ulli i=0;i<n;i++){
+		if(i){
+
+		}else{
+			cout<<"0 ";
+			st.push(x[i]);
+			continue;
+		}
+		while(st.front()>=x[i].first)st.pop();
 		
     }
 	return 0;
