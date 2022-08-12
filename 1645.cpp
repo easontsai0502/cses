@@ -51,7 +51,7 @@ int main(){
             if((*stit).first>=(*stedit).first){
                 deque< pair<ulli,ulli> >::iterator delit=stit;
                 stit++;
-                st.erase(stit);
+                st.erase(delit);
             }else{
                 stit++;
             }
