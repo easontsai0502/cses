@@ -45,9 +45,13 @@ int main(){
 			continue;
 		}
         deque< pair<ulli,ulli> >::iterator stit=st.begin();
-		while((*stit).first>=(x[i]).first && (*stit).second!=x[i].second){
+		while((*stit).second!=x[i].second){
             stit++;
-            st.pop_front();
+            if((*stit).first>=(x[i]).first){
+                deque< pair<ulli,ulli> >::iterator delit=stit;
+                delit--;
+                st.erase(stit);
+            }
         }
 
     }
