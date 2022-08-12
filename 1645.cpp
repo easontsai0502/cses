@@ -45,12 +45,15 @@ int main(){
 			continue;
 		}
         deque< pair<ulli,ulli> >::iterator stit=st.begin();
-		while((*stit).second!=x[i].second){
-            stit++;
-            if((*stit).first>=(x[i]).first){
+        deque< pair<ulli,ulli> >::iterator stedit=st.end();
+        stedit--;
+		while(stit!=stedit){
+            if((*stit).first>=(*stedit).first){
                 deque< pair<ulli,ulli> >::iterator delit=stit;
-                delit--;
+                stit++;
                 st.erase(stit);
+            }else{
+                stit++;
             }
         }
     }
