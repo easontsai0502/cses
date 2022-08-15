@@ -14,6 +14,9 @@ using namespace std;
 #define ulli unsigned long long int
 #define lli long long ulli
 int main(){
+    cin.tie(0);
+    cout.tie(0);
+    ios::sync_with_stdio(false);
     ulli n;
     cin>>n;
     vector< pair<ulli,ulli> >x;
@@ -45,11 +48,17 @@ int main(){
 			continue;
 		}
         deque< pair<ulli,ulli> >::iterator stit=st.begin();
-		while((*stit).first>=(x[i]).first && (*stit).second!=x[i].second){
-            stit++;
-            st.pop_front();
+        deque< pair<ulli,ulli> >::iterator stedit=st.end();
+        stedit--;
+		while(stit!=stedit){
+            if((*stit).first>=(*stedit).first){
+                deque< pair<ulli,ulli> >::iterator delit=stit;
+                stit++;
+                st.erase(delit);
+            }else{
+                stit++;
+            }
         }
-
     }
 	return 0;
 }

@@ -58,7 +58,39 @@
 					"remove":[],
 					"edit":[],
 					"other_thing":"",
-					"other_branch":[]
+					"other_branch":[
+						{"name":"1645_way2",
+							"verson_tree":[
+								{"time":"08-12-2022-16:39",
+									"by":{"name":"ET01","mail":"kagariet01@outlook.com"},
+									"do":"branch create"
+								},
+								{"time":"08-02-2022-16:41",
+									"by":{"name":"ET01","mail":"kagariet01@outlook.com"},
+									"do":"files edit",
+									"add":[],
+									"edit":[
+										"./1645.cpp"
+									],
+									"remove":[],
+									"other_thing":"",
+									"other_branch":[]
+								},
+								{"time":"08-15-2022-09:08",
+									"by":{"name":"ET01","mail":"kagariet01@outlook.com"},
+									"do":"files edit",
+									"add":["./1645_3.cpp"],
+									"edit":[],
+									"rename":[
+										{"original":"./1645.cpp","after":"./1645_2.cpp"}
+									],
+									"remove":[],
+									"other_thing":"",
+									"other_branch":[]
+								}
+							]
+						}
+					]
 				}
 			]
 		}
