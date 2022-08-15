@@ -1,6 +1,6 @@
 /*
 [Q]https://cses.fi/problemset/task/1645
-[]
+[AC]
 */
 #include<iostream>
 #include<vector>
@@ -22,24 +22,21 @@ int main(){
 	deque< pair<ulli,ulli> > vec;
 	for(int i=0;i<n;i++){
 		cin>>x;
-		if(vec.size){
+		ulli ans=0;
+		if(vec.size()){
 			deque< pair<ulli,ulli> >::iterator it;
 			it=vec.end();
 			ulli runcount=vec.size();
 			while(runcount--){
 				it--;
 				if((*it).first<x){
-					cout<<(*it).second+1<<' ';
+					ans=(*it).second+1;
 					break;
 				}
 			}
-			if(!runcount){
-				cout<<"0 ";
-			}
-		}else{
-			cout<<"0 ";
 		}
-		while((vec.back()).first>=x && vec.size()){
+		cout<<ans<<' ';
+		while(vec.size()&&(vec.back()).first>=x){
 			vec.pop_back();
 		}
 		vec.push_back({x,i});

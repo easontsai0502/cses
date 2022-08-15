@@ -81,6 +81,9 @@
 									"do":"files edit",
 									"add":["./1645_3.cpp"],
 									"edit":[],
+									"rename":[
+										{"original":"./1645.cpp","after":"./1645_2.cpp"}
+									],
 									"remove":[],
 									"other_thing":"",
 									"other_branch":[]
