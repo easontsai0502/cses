@@ -14,6 +14,9 @@ using namespace std;
 #define ulli unsigned long long int
 #define lli long long ulli
 int main(){
+    cin.tie(0);
+    cout.tie(0);
+    ios::sync_with_stdio(false);
     ulli n;
     cin>>n;
     vector< pair<ulli,ulli> >x;
