@@ -87,10 +87,31 @@
 									"remove":[],
 									"other_thing":"",
 									"other_branch":[]
+								},
+								{"time":"08-15-2022-09:08",
+									"by":{"name":"ET01","mail":"kagariet01@outlook.com"},
+									"do":"branch merge",
+									"from":"1645_way2",
+									"to":"main",
+									"other_thing":"",
+									"other_branch":[]
+								},
+								{"time":"08-15-2022-09:08",
+									"by":{"name":"ET01","mail":"kagariet01@outlook.com"},
+									"do":"branch delete",
+									"other_thing":""
 								}
 							]
 						}
 					]
+				},
+				{"time":"08-15-2022-09:08",
+					"by":{"name":"ET01","mail":"kagariet01@outlook.com"},
+					"do":"branch merge",
+					"from":"1645_way2",
+					"to":"main",
+					"other_thing":"",
+					"other_branch":[]
 				}
 			]
 		}
