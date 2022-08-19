@@ -10,7 +10,6 @@
 #include<string>
 #include<sstream>
 #include<vector>
-#include<struct>
 #include<queue>
 #include<deque>
 #include<map>
@@ -66,7 +65,7 @@ int main(){
 						}
 					}
 				}
-				highpoint.erase[k[i-1]];
+				highpoint.erase(k[i-1]);
 			}else if(k[i-1]<k[i])){
 				/*你比上一個高，直接進去，不要多問*/
 				highpoint[k[i]]=i;

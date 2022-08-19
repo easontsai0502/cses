@@ -10,7 +10,6 @@
 #include<string>
 #include<sstream>
 #include<vector>
-#include<struct>
 #include<queue>
 #include<deque>
 #include<map>
