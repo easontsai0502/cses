@@ -24,7 +24,7 @@ using namespace std;
 #define pii pair<int,int>
 #define plli pair<lli,lli>
 #define pulli pair<ulli,ulli>
-#define INT int
+#define INT lli
 #define UINT unsigned INT
 
 /*struct*/
@@ -51,14 +51,14 @@ int main(){
 	}
 	map<UINT,UINT> highpoint;/*紀錄每個高度的竿子的位置*/
 	UINT ans=0;
-	for(int i=0;i<n;i++){
+	for(UINT i=0;i<n;i++){
 		if(i){
 			/*如果現在這個比上一個矮*/
 			if(k[i-1]>k[i]){
 				/*偵測是否要加入*/
 				if(!(highpoint.count(k[i]))){
 					/*需要加入，從高度矮的開始找*/
-					for(int j=k[i]+1;j<=maxk;j++){
+					for(UINT j=k[i]+1;j<=maxk;j++){
 						/*如果該高度有資料*/
 						if(highpoint.count(j)){
 							highpoint[k[i]]=highpoint[j];
@@ -72,11 +72,11 @@ int main(){
 				highpoint[k[i]]=i;
 			}
 			/*計算ans*/
-			if(i==n-1 || k[i+1]<k[i]){
+			if(i=n-1 || k[i+1]<k[i]){
 				/*下一個會變矮，或者已經到結尾再計算*/
 				/*下一個會長高或一樣高的話，丟給下一次計算就好*/
 				/*如果已經到結尾了，就一定要計算*/
-				for(int j=mink;j<k[i];j++){
+				for(UINT j=mink;j<k[i];j++){
 					/*該高度有資料再計算即可，若無資料則代表可以更高*/
 					if(highpoint.count(j)){
 						UINT thisans=(i-highpoint[j]+1)*j;/*距離*高度*/
