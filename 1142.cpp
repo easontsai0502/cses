@@ -63,21 +63,23 @@ int main(){
 						if(highpoint.count(j)){
 							highpoint[k[i]]=highpoint[j];
 						}
+						break;
 					}
 				}
 				highpoint.erase(k[i-1]);
-			}else if(k[i-1]<k[i])){
+			}else if(k[i-1]<k[i]){
 				/*你比上一個高，直接進去，不要多問*/
 				highpoint[k[i]]=i;
 			}
 			/*計算ans*/
 			if(i==n-1 || k[i+1]<k[i]){
-				/*下一個會變矮，或者已經到結尾後再計算*/
+				/*下一個會變矮，或者已經到結尾再計算*/
 				/*下一個會長高或一樣高的話，丟給下一次計算就好*/
 				/*如果已經到結尾了，就一定要計算*/
 				for(int j=mink;j<k[i];j++){
+					/*該高度有資料再計算即可，若無資料則代表可以更高*/
 					if(highpoint.count(j)){
-						ns=max( (i-highpoint[j+1)*k[i] ,ans);
+						ans=max( (i-highpoint[j]+1)*k[j] ,ans);
 					}
 				}
 			}
@@ -93,7 +95,10 @@ int main(){
 
 /*
 [I1]
+8
+4 1 5 3 3 2 4 1
 [O1]
+10
 */
 
 /*think*/
