@@ -43,7 +43,7 @@ int main(){
 	UINT mink=0;
 	UINT lbr=0;/*左值大於右值數量*/
 	UINT lsr=0;/*左值小於等於右值數量*/
-	for(int i=0;i<n;i++){
+	for(UINT i=0;i<n;i++){
 		cin>>k[i];
 		maxk=max(maxk,k[i]);
 		if(mink){
@@ -81,7 +81,7 @@ int main(){
 						}
 					}
 				}
-				for(int j=k[i]+1;j<=maxk;j++){
+				for(UINT j=k[i]+1;j<=maxk;j++){
 					if(highpoint.count(j)){
 						highpoint.erase(j);
 					}
