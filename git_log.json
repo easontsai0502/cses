@@ -117,7 +117,8 @@
 					"by":{"name":"ET01","mail":"kagariet01@outlook.com"},
 					"do":"files edit",
 					"add":[
-						"./1142.cpp"
+						"./1142.cpp",
+						"./basic.cpp"
 					],
 					"other_thing":"",
 					"other_branch":[]
