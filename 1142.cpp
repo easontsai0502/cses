@@ -72,11 +72,11 @@ int main(){
 				highpoint[k[i]]=i;
 			}
 			/*計算ans*/
-			if(i=n-1 || k[i+1]<k[i]){
+			if(i>=n-1 || k[i+1]<k[i]){
 				/*下一個會變矮，或者已經到結尾再計算*/
 				/*下一個會長高或一樣高的話，丟給下一次計算就好*/
 				/*如果已經到結尾了，就一定要計算*/
-				for(UINT j=mink;j<k[i];j++){
+				for(UINT j=mink;j<=k[i];j++){
 					/*該高度有資料再計算即可，若無資料則代表可以更高*/
 					if(highpoint.count(j)){
 						UINT thisans=(i-highpoint[j]+1)*j;/*距離*高度*/
