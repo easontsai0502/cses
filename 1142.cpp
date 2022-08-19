@@ -36,25 +36,29 @@ using namespace std;
 
 /*main*/
 int main(){
-    UINT n;
-    cin>>n;
-    UINT k[n];
-    UINT maxk=0;
-    for(int i=0;i<n;i++)cin>>k[i],maxk=max(maxk,k[i]);
-    map<UINT,UINT> highpoint;/*紀錄每個高度的竿子的位置*/
-    UINT ans=0;
-    for(int i=0;i<n;i++){
-        if(i){
-            if(!(highpoint.count(k[i]))){
-                highpoint[k[i]]=i;
-            }
-            ans=max((i-highpoint[k[i]]+1)*k[i],ans);
-        }else{
-            ans=k[i];
-            highpoint[k[i]]=i;
-        }
-    }
-    return 0;
+	UINT n;
+	cin>>n;
+	UINT k[n];
+	UINT maxk=0;
+	for(int i=0;i<n;i++)cin>>k[i],maxk=max(maxk,k[i]);
+	map<UINT,UINT> highpoint;/*紀錄每個高度的竿子的位置*/
+	UINT ans=0;
+	for(int i=0;i<n;i++){
+		if(i){
+			/*偵測是否要加入*/
+			if(!(highpoint.count(k[i]))){
+				highpoint[k[i]]=i;
+			}
+
+	
+
+			ans=max((i-highpoint[k[i]]+1)*k[i],ans);
+		}else{
+			ans=k[i];
+			highpoint[k[i]]=i;
+		}
+	}
+	return 0;
 }
 
 /*
