@@ -22,6 +22,11 @@ using namespace std;
 /*define type*/
 #define ulli unsigned long long int
 #define lli long long int
+#define pii pair<int,int>
+#define plli pair<lli,lli>
+#define pulli pair<ulli,ulli>
+#define INT int
+#define UINT unsigned INT
 
 /*struct*/
 
