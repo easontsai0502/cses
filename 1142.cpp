@@ -66,7 +66,11 @@ int main(){
 						}
 					}
 				}
-				highpoint.erase(k[i-1]);
+				for(int j=k[i]+1;j<=maxk;j++){
+					if(highpoint.count(j)){
+						highpoint.erase(j);
+					}
+				}
 			}else if(k[i-1]<k[i]){
 				/*你比上一個高，直接進去，不要多問*/
 				highpoint[k[i]]=i;
