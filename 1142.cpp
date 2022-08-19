@@ -60,7 +60,7 @@ int main(){
 		}
 	}
 	if(lbr>lsr){
-		for(int i=0;i<(n/2);i++){
+		for(UINT i=0;i<(n/2);i++){
 			swap(k[i],k[n-i-1]);
 		}
 	}
