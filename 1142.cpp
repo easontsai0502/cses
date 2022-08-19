@@ -40,6 +40,8 @@ int main(){
 	UINT k[n];
 	UINT maxk=0;
 	UINT mink=0;
+	UINT lbr=0;/*左值大於右值數量*/
+	UINT lsr=0;/*左值小於等於右值數量*/
 	for(int i=0;i<n;i++){
 		cin>>k[i];
 		maxk=max(maxk,k[i]);
@@ -47,6 +49,18 @@ int main(){
 			mink=min(mink,k[i]);
 		}else{
 			mink=k[i];
+		}
+		if(i){
+			if(k[i-1]>k[i]){
+				lbr++;
+			}else{
+				lsr--;
+			}
+		}
+	}
+	if(lbr>lsr){
+		for(int i=0;i<(n/2);i++){
+			swap(k[i],k[n-i-1]);
 		}
 	}
 	map<UINT,UINT> highpoint;/*紀錄每個高度的竿子的位置*/
