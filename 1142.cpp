@@ -72,10 +72,16 @@ int main(){
 				highpoint[k[i]]=i;
 			}
 			/*計算ans*/
-			for(int i=1;i<k[i];i++){
-
+			if(i==n-1 || k[i+1]<k[i]){
+				/*下一個會變矮，或者已經到結尾後再計算*/
+				/*下一個會長高或一樣高的話，丟給下一次計算就好*/
+				/*如果已經到結尾了，就一定要計算*/
+				for(int j=mink;j<k[i];j++){
+					if(highpoint.count(j)){
+						ns=max( (i-highpoint[j+1)*k[i] ,ans);
+					}
+				}
 			}
-			ans=max( (i-highpoint[k[i]]+1)*k[i] ,ans);
 		}else{
 			/*如果是第一個，先做初始化*/
 			ans=k[i];
