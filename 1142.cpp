@@ -79,7 +79,8 @@ int main(){
 				for(int j=mink;j<k[i];j++){
 					/*該高度有資料再計算即可，若無資料則代表可以更高*/
 					if(highpoint.count(j)){
-						ans=max( (i-highpoint[j]+1)*k[j] ,ans);
+						UINT thisans=(i-highpoint[j]+1)*j;/*距離*高度*/
+						ans=max(thisans,ans);
 					}
 				}
 			}
