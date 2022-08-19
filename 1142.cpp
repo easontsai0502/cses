@@ -62,8 +62,8 @@ int main(){
 						/*如果該高度有資料*/
 						if(highpoint.count(j)){
 							highpoint[k[i]]=highpoint[j];
+							break;
 						}
-						break;
 					}
 				}
 				highpoint.erase(k[i-1]);
