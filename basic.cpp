@@ -14,28 +14,43 @@
 #include<deque>
 #include<map>
 #include<set>
+#include<stack>
+#include<cstring>
+#include<unordered_map>
 
 /*using namespace*/
 using namespace std;
 
 /*define type*/
-#define ulli unsigned long long int
-#define lli long long int
-#define pii pair<int,int>
-#define plli pair<lli,lli>
-#define pulli pair<ulli,ulli>
+#define ULLI unsigned long long int
+#define LLI long long int
 #define INT int
 #define UINT unsigned INT
+#define PII pair<INT,INT>
+#define PUIUI pair<UINT,UINT>
 
 /*struct*/
 
+/*fn宣告*/
+
 /*num*/
 
-/*fn*/
+/*fn定義*/
 
 /*main*/
 int main(){
-    return 0;
+	{/*IO加速*/
+		cin.tie(0);
+		cout.tie(0);
+		ios::sync_with_stdio(false);
+	}
+	{/*CIN*/
+
+	}
+	{/*solve*/
+
+	}
+	return 0;
 }
 
 /*
