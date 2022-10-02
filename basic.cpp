@@ -39,17 +39,12 @@ using namespace std;
 
 /*main*/
 int main(){
-	{/*IO加速*/
-		cin.tie(0);
-		cout.tie(0);
-		ios::sync_with_stdio(false);
-	}
-	{/*CIN*/
-
-	}
-	{/*solve*/
-
-	}
+	/*IO加速*/
+	cin.tie(0);
+	cout.tie(0);
+	ios::sync_with_stdio(false);
+	/*CIN*/
+	/*solve*/
 	return 0;
 }
 
