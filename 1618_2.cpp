@@ -23,7 +23,7 @@ int main(){
 	int n;
 	cin>>n;
 	for(int i=1;i<=n;i++){
-		tcount+=tfinder(i);
+		//tcount+=tfinder(i);
 		fcount+=ffinder(i);
 	}
 	cout<<fcount;
